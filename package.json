@@ -1,0 +1,20 @@
+{
+  "name": "@dapp-vue3/monorepo",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "contracts"
+  ],
+  "scripts": {
+    "test": "yarn workspace @dapp-vue3/contracts run test",
+    "start:node": "yarn workspace @dapp-vue3/contracts run node",
+    "deploy:local": "yarn workspace @dapp-vue3/contracts run deploy:local",
+    "dev": "yarn workspace @dapp-vue3/frontend run dev",
+    "build:contracts": "yarn workspace @dapp-vue3/contracts run build",
+    "build:vue": "yarn workspace @dapp-vue3/frontend run build",
+    "build": "yarn build:contracts && yarn build:vue"
+  }
+}
