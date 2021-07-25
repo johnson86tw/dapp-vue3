@@ -5,7 +5,7 @@ import { defineComponent, h } from "vue";
 const navigation = [
   {
     name: "GitHub",
-    href: "https://github.com/chnejohnson/splitter",
+    href: "https://github.com/chnejohnson/dapp-vue3",
     icon: defineComponent({
       render: () =>
         h("svg", { fill: "currentColor", viewBox: "0 0 24 24" }, [
