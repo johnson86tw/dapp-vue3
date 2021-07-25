@@ -1,5 +1,5 @@
 import { ref, watch } from "vue";
-import { Greeter } from "../../../contracts/typechain/Greeter";
+import { Greeter } from "@dapp-vue3/contracts/typechain/Greeter";
 import useConfig from "@/config";
 import useMetaMask from "@/composables/metamask";
 

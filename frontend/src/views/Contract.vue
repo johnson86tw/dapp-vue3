@@ -1,11 +1,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import useMetaMask from "../composables/metamask";
-import {
-  useGetGreeting,
-  useGreeterContract,
-  useSetGreeting,
-} from "../composables/greeter";
+import { useGetGreeting, useGreeterContract } from "../composables/greeter";
 import { Greeter as IGreeter } from "@dapp-vue3/contracts/typechain/Greeter";
 import useGreeterStore from "../store/greeter";
 import Greeter from "../components/Greeter.vue";
@@ -14,7 +10,7 @@ export default defineComponent({
   components: { Greeter },
   name: "Contract",
   setup() {
-    const { etherBalance, connectError, getBalance } = useMetaMask();
+    const { etherBalance, connectError } = useMetaMask();
     const { connectContractAt } = useGreeterContract();
     const { greeting, getGreeting } = useGetGreeting();
     const { greeters, addGreeter } = useGreeterStore();

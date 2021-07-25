@@ -1,12 +1,12 @@
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, PropType, ref } from "vue";
 import { useGetGreeting, useSetGreeting } from "../composables/greeter";
-import useGreeterStore, { GreeterData } from "../store/greeter";
+import useGreeterStore from "../store/greeter";
 
 export default defineComponent({
   props: {
     greeterData: {
-      type: Object as () => GreeterData,
+      type: Object,
     },
   },
   setup(props) {
@@ -36,18 +36,18 @@ export default defineComponent({
   <div class="grid place-items-center">
     <div class="w-full border shadow p-8 bg-white sm:w-8/12 md:w-1/2 lg:w-5/12">
       <div class="text-center p-2">
-        {{ displayAddress(greeterData.address) }}
-        <p>Greeting: {{ greeterData.greeting }}</p>
+        {{ displayAddress(greeterData?.address ?? "") }}
+        <p>Greeting: {{ greeterData?.greeting }}</p>
       </div>
 
       <div class="flex justify-between gap-3">
         <span class="w-full">
           <label
-            :for="greeterData.address"
+            :for="greeterData?.address"
             class="block text-xs font-semibold text-gray-600 uppercase"
           >Greeting</label>
           <input
-            :id="greeterData.address"
+            :id="greeterData?.address"
             name="Greeting"
             placeholder="Hello World"
             v-model="greetingInput"
